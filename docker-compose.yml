@@ -1,0 +1,39 @@
+dbdata:
+  image: mysql:5.7
+  name: searchapp-db-data
+  environment:
+    - MYSQL_ROOT_PASSWORD=secretpassword
+  volumes:
+    - /var/lib/mysql
+  command: /bin/true
+db:
+  image: mysql:5.7
+  name: searchapp-db
+  environment:
+    - MYSQL_ROOT_PASSWORD=secretpassword
+  volumes_from:
+    - dbdata
+es:
+  image: elasticsearch
+  name: searchapp-es
+  volumes:
+   - /var/lib/elasticsearch
+redis:
+  image: redis:2.6
+memcached:
+  image: memcached
+webapp:
+  build: .
+  name: searchapp 
+  working_dir: /home/app/webapp
+  ports:
+    - "80:80"
+  environment:
+    - PASSENGER_APP_ENV=development
+  links:
+    - es
+    - db
+    - redis
+    - memcached
+  volumes:
+    - .:/home/app/webapp
