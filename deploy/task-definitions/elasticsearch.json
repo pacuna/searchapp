@@ -1,0 +1,52 @@
+{
+    "containerDefinitions": [
+        {
+            "volumesFrom": [],
+            "memory": 256,
+            "extraHosts": null,
+            "dnsServers": null,
+            "disableNetworking": null,
+            "dnsSearchDomains": null,
+            "portMappings": [
+                {
+                    "hostPort": 9200,
+                    "containerPort": 9200,
+                    "protocol": "tcp"
+                }
+            ],
+            "hostname": null,
+            "essential": true,
+            "entryPoint": [],
+            "mountPoints": [
+                {
+                    "containerPath": "/usr/share/elasticsearch/data",
+                    "sourceVolume": "elasticsearch-data",
+                    "readOnly": false
+                }
+            ],
+            "name": "searchapp-es",
+            "ulimits": null,
+            "dockerSecurityOptions": null,
+            "environment": [],
+            "links": [],
+            "workingDirectory": null,
+            "readonlyRootFilesystem": null,
+            "image": "elasticsearch",
+            "command": [],
+            "user": null,
+            "dockerLabels": null,
+            "logConfiguration": null,
+            "cpu": 128,
+            "privileged": null
+        }
+    ],
+    "volumes": [
+        {
+            "host": {
+                "sourcePath": "/usr/share/elasticsearch/data"
+            },
+            "name": "elasticsearch-data"
+        }
+    ],
+    "family": "elasticsearch"
+}

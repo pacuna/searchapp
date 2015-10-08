@@ -1,0 +1,69 @@
+{
+    "containerDefinitions": [
+        {
+            "volumesFrom": [],
+            "memory": 256,
+            "extraHosts": null,
+            "dnsServers": null,
+            "disableNetworking": null,
+            "dnsSearchDomains": null,
+            "portMappings": [
+                {
+                    "hostPort": 3306,
+                    "containerPort": 3306,
+                    "protocol": "tcp"
+                }
+            ],
+            "hostname": null,
+            "essential": true,
+            "entryPoint": [],
+            "mountPoints": [
+                {
+                    "containerPath": "/var/lib/mysql",
+                    "sourceVolume": "mysql-data",
+                    "readOnly": false
+                }
+            ],
+            "name": "searchapp-db",
+            "ulimits": null,
+            "dockerSecurityOptions": null,
+            "environment": [
+                {
+                    "name": "MYSQL_DATABASE",
+                    "value": "searchapp_production"
+                },
+                {
+                    "name": "MYSQL_PASSWORD",
+                    "value": "mysecretpassword"
+                },
+                {
+                    "name": "MYSQL_ROOT_PASSWORD",
+                    "value": "mysupersecretpassword"
+                },
+                {
+                    "name": "MYSQL_USER",
+                    "value": "searchappusr"
+                }
+            ],
+            "links": [],
+            "workingDirectory": null,
+            "readonlyRootFilesystem": null,
+            "image": "mysql:5.7",
+            "command": [],
+            "user": null,
+            "dockerLabels": null,
+            "logConfiguration": null,
+            "cpu": 128,
+            "privileged": null
+        }
+    ],
+    "volumes": [
+        {
+            "host": {
+                "sourcePath": null
+            },
+            "name": "mysql-data"
+        }
+    ],
+    "family": "searchapp-db"
+}

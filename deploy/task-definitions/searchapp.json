@@ -1,0 +1,76 @@
+{
+    "containerDefinitions": [
+        {
+            "volumesFrom": [],
+            "memory": 512,
+            "extraHosts": null,
+            "dnsServers": null,
+            "disableNetworking": null,
+            "dnsSearchDomains": null,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "hostname": null,
+            "essential": true,
+            "entryPoint": [],
+            "mountPoints": [],
+            "name": "searchapp-webapp",
+            "ulimits": null,
+            "dockerSecurityOptions": null,
+            "environment": [
+                {
+                    "name": "MEMCACHED_URL",
+                    "value": "memcached-elb-1973664101.us-west-2.elb.amazonaws.com"
+                },
+                {
+                    "name": "DB_PORT_80_TCP_ADDR",
+                    "value": "mysql-elb-76563440.us-west-2.elb.amazonaws.com"
+                },
+                {
+                    "name": "DB_ENV_MYSQL_PASSWORD",
+                    "value": "mysupersecretpassword"
+                },
+                {
+                    "name": "PASSENGER_APP_ENV",
+                    "value": "production"
+                },
+                {
+                    "name": "ELASTICSEARCH_URL",
+                    "value": "http://elasticsearch-elb-2119284294.us-west-2.elb.amazonaws.com"
+                },
+                {
+                    "name": "DB_ENV_MYSQL_NAME",
+                    "value": "searchapp_production"
+                },
+                {
+                    "name": "SECRET_KEY_BASE",
+                    "value": "6ada559ef69d8aa0501524f9ca8378122a5f25945d073e1c5aef0b88156fb9609b02fab9710b94343fef5f720f76a9619c54cbe93483749949fccce1b94e5fe0"
+                },
+                {
+                    "name": "DB_ENV_MYSQL_USER",
+                    "value": "root"
+                },
+                {
+                    "name": "REDIS_URL",
+                    "value": "redis-elb-252857273.us-west-2.elb.amazonaws.com"
+                }
+            ],
+            "links": [],
+            "workingDirectory": null,
+            "readonlyRootFilesystem": null,
+            "image": "pacuna/searchapp:0.132",
+            "command": [],
+            "user": null,
+            "dockerLabels": null,
+            "logConfiguration": null,
+            "cpu": 512,
+            "privileged": null
+        }
+    ],
+    "volumes": [],
+    "family": "searchapp"
+}
