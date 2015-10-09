@@ -3,10 +3,6 @@
         {
             "volumesFrom": [],
             "memory": 256,
-            "extraHosts": null,
-            "dnsServers": null,
-            "disableNetworking": null,
-            "dnsSearchDomains": null,
             "portMappings": [
                 {
                     "hostPort": 3306,
@@ -14,7 +10,6 @@
                     "protocol": "tcp"
                 }
             ],
-            "hostname": null,
             "essential": true,
             "entryPoint": [],
             "mountPoints": [
@@ -25,8 +20,6 @@
                 }
             ],
             "name": "searchapp-db",
-            "ulimits": null,
-            "dockerSecurityOptions": null,
             "environment": [
                 {
                     "name": "MYSQL_DATABASE",
@@ -46,22 +39,13 @@
                 }
             ],
             "links": [],
-            "workingDirectory": null,
-            "readonlyRootFilesystem": null,
             "image": "mysql:5.7",
             "command": [],
-            "user": null,
-            "dockerLabels": null,
-            "logConfiguration": null,
-            "cpu": 128,
-            "privileged": null
+            "cpu": 128
         }
     ],
     "volumes": [
         {
-            "host": {
-                "sourcePath": null
-            },
             "name": "mysql-data"
         }
     ],
