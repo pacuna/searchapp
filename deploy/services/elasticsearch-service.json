@@ -1,0 +1,13 @@
+{
+    "serviceName": "elasticsearch-service",
+    "taskDefinition": "elasticsearch:1",
+    "loadBalancers": [
+        {
+            "loadBalancerName": "elasticsearch-elb",
+            "containerName": "searchapp-es",
+            "containerPort": 9200
+        }
+    ],
+    "desiredCount": 1,
+    "role": "ecsServiceRole"
+}

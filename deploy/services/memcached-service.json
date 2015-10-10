@@ -1,0 +1,13 @@
+{
+    "serviceName": "memcached-service",
+    "taskDefinition": "memcached:1",
+    "loadBalancers": [
+        {
+            "loadBalancerName": "memcached-elb",
+            "containerName": "searchapp-memcached",
+            "containerPort": 11211
+        }
+    ],
+    "desiredCount": 1,
+    "role": "ecsServiceRole"
+}

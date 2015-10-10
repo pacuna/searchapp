@@ -3,10 +3,6 @@
         {
             "volumesFrom": [],
             "memory": 128,
-            "extraHosts": null,
-            "dnsServers": null,
-            "disableNetworking": null,
-            "dnsSearchDomains": null,
             "portMappings": [
                 {
                     "hostPort": 6379,
@@ -14,24 +10,15 @@
                     "protocol": "tcp"
                 }
             ],
-            "hostname": null,
             "essential": true,
             "entryPoint": [],
             "mountPoints": [],
-            "name": "search-redis",
-            "ulimits": null,
-            "dockerSecurityOptions": null,
+            "name": "searchapp-redis",
             "environment": [],
             "links": [],
-            "workingDirectory": null,
-            "readonlyRootFilesystem": null,
             "image": "redis",
             "command": [],
-            "user": null,
-            "dockerLabels": null,
-            "logConfiguration": null,
-            "cpu": 128,
-            "privileged": null
+            "cpu": 128
         }
     ],
     "volumes": [],

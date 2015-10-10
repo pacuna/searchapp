@@ -1,0 +1,13 @@
+{
+    "serviceName": "redis-service",
+    "taskDefinition": "redis:1",
+    "loadBalancers": [
+        {
+            "loadBalancerName": "redis-elb",
+            "containerName": "searchapp-redis",
+            "containerPort": 6379
+        }
+    ],
+    "desiredCount": 1,
+    "role": "ecsServiceRole"
+}
