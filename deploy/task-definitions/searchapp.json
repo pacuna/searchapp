@@ -53,9 +53,9 @@
                 }
             ],
             "links": [],
-            "image": "pacuna/searchapp:1.0",
+            "image": "pacuna/searchapp:1.1",
             "command": [],
-            "cpu": 512,
+            "cpu": 512
         }
     ],
     "volumes": [],
