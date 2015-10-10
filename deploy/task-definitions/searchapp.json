@@ -3,10 +3,6 @@
         {
             "volumesFrom": [],
             "memory": 512,
-            "extraHosts": null,
-            "dnsServers": null,
-            "disableNetworking": null,
-            "dnsSearchDomains": null,
             "portMappings": [
                 {
                     "hostPort": 80,
@@ -14,21 +10,18 @@
                     "protocol": "tcp"
                 }
             ],
-            "hostname": null,
             "essential": true,
             "entryPoint": [],
             "mountPoints": [],
             "name": "searchapp-webapp",
-            "ulimits": null,
-            "dockerSecurityOptions": null,
             "environment": [
                 {
                     "name": "MEMCACHED_URL",
-                    "value": "memcached-elb-1973664101.us-west-2.elb.amazonaws.com"
+                    "value": "internal-memcached-elb-47598939.us-east-1.elb.amazonaws.com"
                 },
                 {
                     "name": "DB_PORT_80_TCP_ADDR",
-                    "value": "mysql-elb-76563440.us-west-2.elb.amazonaws.com"
+                    "value": "internal-mysql-elb-1700927984.us-east-1.elb.amazonaws.com"
                 },
                 {
                     "name": "DB_ENV_MYSQL_PASSWORD",
@@ -40,7 +33,7 @@
                 },
                 {
                     "name": "ELASTICSEARCH_URL",
-                    "value": "http://elasticsearch-elb-2119284294.us-west-2.elb.amazonaws.com"
+                    "value": "http://internal-elasticsearch-elb-907663077.us-east-1.elb.amazonaws.com"
                 },
                 {
                     "name": "DB_ENV_MYSQL_NAME",
@@ -56,19 +49,13 @@
                 },
                 {
                     "name": "REDIS_URL",
-                    "value": "redis-elb-252857273.us-west-2.elb.amazonaws.com"
+                    "value": "internal-redis-elb-124984907.us-east-1.elb.amazonaws.com"
                 }
             ],
             "links": [],
-            "workingDirectory": null,
-            "readonlyRootFilesystem": null,
             "image": "pacuna/searchapp:0.132",
             "command": [],
-            "user": null,
-            "dockerLabels": null,
-            "logConfiguration": null,
             "cpu": 512,
-            "privileged": null
         }
     ],
     "volumes": [],
