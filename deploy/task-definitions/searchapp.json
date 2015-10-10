@@ -53,7 +53,7 @@
                 }
             ],
             "links": [],
-            "image": "pacuna/searchapp:0.132",
+            "image": "pacuna/searchapp:1.0",
             "command": [],
             "cpu": 512,
         }

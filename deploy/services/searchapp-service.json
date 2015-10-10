@@ -1,0 +1,13 @@
+{
+    "serviceName": "searchapp-service",
+    "taskDefinition": "searchapp:1",
+    "loadBalancers": [
+        {
+            "loadBalancerName": "searchapp-elb",
+            "containerName": "searchapp-webapp",
+            "containerPort": 80
+        }
+    ],
+    "desiredCount": 1,
+    "role": "ecsServiceRole"
+}
