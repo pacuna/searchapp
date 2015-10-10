@@ -1,0 +1,13 @@
+{
+    "serviceName": "mysql-service",
+    "taskDefinition": "searchapp-db:1",
+    "loadBalancers": [
+        {
+            "loadBalancerName": "mysql-elb",
+            "containerName": "searchapp-db",
+            "containerPort": 3306 
+        }
+    ],
+    "desiredCount": 1,
+    "role": "ecsServiceRole"
+}
