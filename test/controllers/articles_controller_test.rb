@@ -4,7 +4,7 @@ class ArticlesControllerTest < ActionController::TestCase
   setup do
     @article = articles(:one)
 
-    Article.__elasticsearch__.import
+    Article.__elasticsearch__.import force: true
     Article.__elasticsearch__.refresh_index!
   end
 
