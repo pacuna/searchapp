@@ -4,7 +4,7 @@ IMAGE_VERSION="v_"${BUILD_NUMBER}
 TASK_FAMILY="searchapp"
 
 # Create a new task definition for this build
-sed -e "s;%BUILD_NUMBER%;${BUILD_NUMBER};g" task-definitions/searchapp_jenkins_template.json > searchapp-v_${BUILD_NUMBER}.json
+sed -e "s;%BUILD_NUMBER%;${BUILD_NUMBER};g" deploy/task-definitions/searchapp_jenkins_template.json > searchapp-v_${BUILD_NUMBER}.json
 aws ecs register-task-definition --family searchapp --cli-input-json file://searchapp-v_${BUILD_NUMBER}.json
 
 # Update the service with the new task definition and desired count
