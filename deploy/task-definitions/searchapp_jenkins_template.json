@@ -1,0 +1,63 @@
+{
+    "containerDefinitions": [
+        {
+            "volumesFrom": [],
+            "memory": 512,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [],
+            "mountPoints": [],
+            "name": "searchapp-webapp",
+            "environment": [
+                {
+                    "name": "MEMCACHED_URL",
+                    "value": "internal-memcached-elb-47598939.us-east-1.elb.amazonaws.com"
+                },
+                {
+                    "name": "DB_PORT_80_TCP_ADDR",
+                    "value": "internal-mysql-elb-1700927984.us-east-1.elb.amazonaws.com"
+                },
+                {
+                    "name": "DB_ENV_MYSQL_PASSWORD",
+                    "value": "mysupersecretpassword"
+                },
+                {
+                    "name": "PASSENGER_APP_ENV",
+                    "value": "production"
+                },
+                {
+                    "name": "ELASTICSEARCH_URL",
+                    "value": "http://internal-elasticsearch-elb-907663077.us-east-1.elb.amazonaws.com"
+                },
+                {
+                    "name": "DB_ENV_MYSQL_NAME",
+                    "value": "searchapp_production"
+                },
+                {
+                    "name": "SECRET_KEY_BASE",
+                    "value": "6ada559ef69d8aa0501524f9ca8378122a5f25945d073e1c5aef0b88156fb9609b02fab9710b94343fef5f720f76a9619c54cbe93483749949fccce1b94e5fe0"
+                },
+                {
+                    "name": "DB_ENV_MYSQL_USER",
+                    "value": "root"
+                },
+                {
+                    "name": "REDIS_URL",
+                    "value": "internal-redis-elb-124984907.us-east-1.elb.amazonaws.com"
+                }
+            ],
+            "links": [],
+            "image": "pacuna/searchapp:v_%BUILD_NUMBER%",
+            "command": [],
+            "cpu": 512
+        }
+    ],
+    "volumes": [],
+    "family": "searchapp"
+}
