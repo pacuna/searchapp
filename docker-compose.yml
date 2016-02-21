@@ -1,6 +1,6 @@
 dbdata:
   image: mysql:5.7
-  name: searchapp-db-data
+  container_name: searchapp-db-data
   environment:
     - MYSQL_ROOT_PASSWORD=secretpassword
   volumes:
@@ -8,14 +8,14 @@ dbdata:
   command: /bin/true
 db:
   image: mysql:5.7
-  name: searchapp-db
+  container_name: searchapp-db
   environment:
     - MYSQL_ROOT_PASSWORD=secretpassword
   volumes_from:
     - dbdata
 es:
   image: elasticsearch
-  name: searchapp-es
+  container_name: searchapp-es
   volumes:
    - /var/lib/elasticsearch
 redis:
@@ -24,7 +24,7 @@ memcached:
   image: memcached
 webapp:
   build: .
-  name: searchapp 
+  container_name: searchapp 
   working_dir: /home/app/webapp
   ports:
     - "80:80"
